@@ -1,0 +1,647 @@
+.size-guide {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 200px);
+}
+
+.size-guide .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.size-guide-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #0a2188 0%, #6a0cc7 100%);
+  background: linear-gradient(135deg, #0a2188 0%, #6a0cc7 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  background-blend-mode: overlay;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+}
+
+.size-guide-header h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.last-updated {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.size-guide-content {
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.guide-section {
+  margin-bottom: 60px;
+}
+
+.guide-section:last-child {
+  margin-bottom: 0;
+}
+
+.guide-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.guide-section p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Measuring Steps */
+.measuring-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.measuring-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(229, 62, 62, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.measuring-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(229, 62, 62, 0.05),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.measuring-step:hover::before {
+  left: 100%;
+}
+
+.measuring-step:hover .step-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(229, 62, 62, 0.4);
+}
+
+.measuring-step:hover {
+  border-color: rgba(229, 62, 62, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(229, 62, 62, 0.15),
+    0 0 0 1px rgba(229, 62, 62, 0.1);
+}
+
+.step-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-icon {
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  padding: 1.2rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  height: 80px;
+  box-shadow: 0 8px 20px rgba(229, 62, 62, 0.3);
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.step-content h3 {
+  color: #1a202c;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.step-content p {
+  color: #718096;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  text-align: center;
+  white-space: normal;
+  width: 100%;
+}
+
+/* Size Charts */
+.size-chart {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  margin-top: 1.5rem;
+}
+
+.chart-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.chart-header h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.chart-header p {
+  color: #718096;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.chart-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.chart-row {
+  display: table-row;
+  transition: all 0.3s ease;
+}
+
+.chart-row.header {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  font-weight: 600;
+}
+
+.chart-row:not(.header):hover {
+  background: #f1f8ff;
+}
+
+.chart-cell {
+  display: table-cell;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 500;
+}
+
+.chart-row.header .chart-cell {
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Accessories Guide */
+.accessories-guide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.accessory-category {
+  padding: 2rem;
+  background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+  border-radius: 16px;
+  border-left: 4px solid #e53e3e;
+}
+
+.accessory-category h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.accessory-category p {
+  color: #718096;
+  margin-bottom: 1.5rem;
+}
+
+.size-tag {
+  display: inline-block;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  border: 1px solid #e2e8f0;
+}
+
+/* Tips Section */
+.tips-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #bee3f8;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tip-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: #3498db;
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.tip-card h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.tip-card p {
+  color: #718096;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Help Section */
+.help-section {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: white;
+  padding: 4rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.help-content h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  border: none;
+}
+
+.help-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.help-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.help-button {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.help-button.primary {
+  background: #3498db;
+  color: white;
+}
+
+.help-button.primary:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+}
+
+.help-button.secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.help-button.secondary:hover {
+  background: white;
+  color: #1a202c;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .size-guide {
+    padding: 30px 0;
+  }
+
+  .size-guide-header {
+    padding: 3rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .size-guide-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .size-guide-content {
+    padding: 30px 20px;
+  }
+
+  .guide-section {
+    margin-bottom: 40px;
+  }
+
+  .guide-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .measuring-steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .measuring-step {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .step-icon {
+    align-self: center;
+    font-size: 2.2rem;
+    min-width: 70px;
+    height: 70px;
+    padding: 1rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .step-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .size-chart {
+    padding: 1.5rem;
+    overflow-x: auto;
+  }
+
+  .chart-table {
+    min-width: 500px;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .help-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .help-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .size-guide-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .measuring-step {
+    padding: 1.2rem;
+    margin: 0 0.5rem;
+  }
+
+  .step-icon {
+    font-size: 2rem;
+    min-width: 60px;
+    height: 60px;
+    padding: 0.8rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .step-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .size-guide-content {
+    padding: 20px 15px;
+  }
+
+  .guide-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .accessories-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .help-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tablet Responsiveness (1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .size-guide-header {
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .size-guide-header h1 {
+    font-size: 2.8rem;
+  }
+
+  .size-guide-content {
+    padding: 40px 30px;
+  }
+
+  .guide-section {
+    margin-bottom: 50px;
+  }
+
+  .guide-section h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Measuring Steps - 2 columns on tablet */
+  .measuring-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .measuring-step {
+    padding: 1.8rem;
+    gap: 1.2rem;
+  }
+
+  .step-icon {
+    font-size: 2.5rem;
+    min-width: 75px;
+    height: 75px;
+    padding: 1.1rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .step-content p {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  /* Size Charts - Adjust padding and font sizes */
+  .size-chart {
+    padding: 2rem;
+  }
+
+  .chart-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .chart-cell {
+    padding: 1rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .chart-row.header .chart-cell {
+    font-size: 1rem;
+  }
+
+  /* Accessories Guide - 2 columns */
+  .accessories-guide {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .accessory-category {
+    padding: 1.8rem;
+  }
+
+  .accessory-category h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Tips Grid - 2 columns */
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .tip-card {
+    padding: 1.8rem;
+  }
+
+  .tip-icon {
+    font-size: 2.2rem;
+  }
+
+  .tip-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .tip-card p {
+    font-size: 0.9rem;
+  }
+
+  /* Help Section */
+  .help-section {
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+  }
+
+  .help-content h2 {
+    font-size: 2rem;
+  }
+
+  .help-content p {
+    font-size: 1.1rem;
+  }
+
+  .help-actions {
+    gap: 1.2rem;
+  }
+
+  .help-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  /* Size tag adjustments */
+  .size-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    margin: 0.2rem;
+  }
+}
